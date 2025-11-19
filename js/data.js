@@ -1,0 +1,80 @@
+const propertiesData = [
+    {
+        id: 1,
+        title: "Moderno Departamento en Cala Cala",
+        price: 450,
+        currency: "$us",
+        location: "Cala Cala, Cochabamba",
+        type: "Departamento",
+        beds: 2,
+        baths: 2,
+        area: 90,
+        image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        featured: true
+    },
+    {
+        id: 2,
+        title: "Casa Familiar con Jardín",
+        price: 800,
+        currency: "$us",
+        location: "Tiquipaya, Cochabamba",
+        type: "Casa",
+        beds: 4,
+        baths: 3,
+        area: 250,
+        image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        featured: true
+    },
+    {
+        id: 3,
+        title: "Monoambiente Céntrico",
+        price: 1500,
+        currency: "Bs",
+        location: "Centro, Cochabamba",
+        type: "Habitación",
+        beds: 1,
+        baths: 1,
+        area: 35,
+        image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        featured: false
+    },
+    {
+        id: 4,
+        title: "Lujoso Penthouse con Vista",
+        price: 1200,
+        currency: "$us",
+        location: "Av. América, Cochabamba",
+        type: "Departamento",
+        beds: 3,
+        baths: 3,
+        area: 180,
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        featured: true
+    },
+    {
+        id: 5,
+        title: "Casa Colonial Renovada",
+        price: 600,
+        currency: "$us",
+        location: "Queru Queru, Cochabamba",
+        type: "Casa",
+        beds: 3,
+        baths: 2,
+        area: 150,
+        image: "https://images.unsplash.com/photo-1600596542815-27bfef402399?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        featured: false
+    },
+    {
+        id: 6,
+        title: "Departamento Estilo Minimalista",
+        price: 350,
+        currency: "$us",
+        location: "Sarco, Cochabamba",
+        type: "Departamento",
+        beds: 2,
+        baths: 1,
+        area: 75,
+        image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        featured: true
+    }
+];

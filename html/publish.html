@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Propiedad - Rentame</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/publish.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <a href="../index.html" class="logo">Rentame</a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="#" class="nav-link active">Publicar</a></li>
+                    <li><a href="login.html" class="nav-link btn-primary">Login / Registro</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Publish Content -->
+    <main class="publish-page">
+        <div class="container publish-container">
+            <div class="publish-header">
+                <h1>Publicar Propiedad</h1>
+                <p>Completa la información para publicar tu anuncio</p>
+            </div>
+
+            <form class="publish-form" onsubmit="event.preventDefault();">
+
+                <!-- Basic Info -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <span>1</span> Información Básica
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="title">Título del Anuncio</label>
+                            <input type="text" id="title" placeholder="Ej. Hermoso departamento en centro" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Precio (Bs)</label>
+                            <input type="number" id="price" placeholder="Ej. 2500" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Tipo de Inmueble</label>
+                            <select id="type" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="departamento">Departamento</option>
+                                <option value="casa">Casa</option>
+                                <option value="habitacion">Habitación</option>
+                                <option value="oficina">Oficina</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Estado</label>
+                            <select id="status" required>
+                                <option value="alquiler">En Alquiler</option>
+                                <option value="anticretico">Anticrético</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <span>2</span> Ubicación
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="city">Ciudad</label>
+                            <select id="city">
+                                <option value="cochabamba">Cochabamba</option>
+                                <option value="sacaba">Sacaba</option>
+                                <option value="quillacollo">Quillacollo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="zone">Zona / Barrio</label>
+                            <input type="text" id="zone" placeholder="Ej. Cala Cala" required>
+                        </div>
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="address">Dirección Exacta</label>
+                            <input type="text" id="address" placeholder="Av. América y Potosí #123" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Details -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <span>3</span> Detalles
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="bedrooms">Habitaciones</label>
+                            <input type="number" id="bedrooms" min="0" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="bathrooms">Baños</label>
+                            <input type="number" id="bathrooms" min="0" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="area">Superficie (m²)</label>
+                            <input type="number" id="area" placeholder="Ej. 120">
+                        </div>
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="description">Descripción</label>
+                            <textarea id="description"
+                                placeholder="Describe las características principales, servicios incluidos, etc."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multimedia -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <span>4</span> Fotos
+                    </div>
+                    <div class="file-upload-area" id="drop-zone">
+                        <div class="upload-icon">📷</div>
+                        <div class="upload-text">Arrastra tus fotos aquí o haz clic para seleccionar</div>
+                        <div class="upload-hint">Formatos: JPG, PNG. Máx 5MB por foto.</div>
+                        <input type="file" id="property-images" multiple accept="image/*" style="display: none;">
+                    </div>
+                    <div id="image-preview" class="image-preview-grid"></div>
+                </div>
+
+                <!-- Contact -->
+                <div class="form-section">
+                    <div class="section-title">
+                        <span>5</span> Contacto
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="contact-name">Nombre de Contacto</label>
+                            <input type="text" id="contact-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Teléfono / WhatsApp</label>
+                            <input type="tel" id="contact-phone" required>
+                        </div>
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="contact-email">Email (Opcional)</label>
+                            <input type="email" id="contact-email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Publicar Anuncio</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Rentame</h3>
+                <p>Conectando personas con sus nuevos hogares en Cochabamba.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../index.html">Buscar</a></li>
+                    <li><a href="#">Publicar Propiedad</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Email: info@rentame.bo</li>
+                    <li>Tel: +591 4 444 4444</li>
+                    <li>Cochabamba, Bolivia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Rentame. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/publish.js"></script>
+</body>
+
+</html>
